@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillSync - Smart Skill Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SkillSync</div>
+    <div class="nav-links">
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('student')">Student</a>
+        <a onclick="showSection('college')">College</a>
+        <a onclick="showSection('company')">Company</a>
+    </div>
+</nav>
+
+<section id="home" class="section active">
+    <div class="hero">
+        <h1>Welcome to SkillSync</h1>
+        <p>Connecting Students, Colleges & Companies through Skills</p>
+    </div>
+</section>
+
+<!-- STUDENT -->
+<section id="student" class="section">
+    <h2>Student Portal</h2>
+
+    <div class="card">
+        <h3>Register</h3>
+        <input type="text" id="sRegName" placeholder="Full Name">
+        <input type="email" id="sRegEmail" placeholder="Email">
+        <input type="password" id="sRegPass" placeholder="Password">
+
+        <label>Branch</label>
+        <select id="sRegBranch">
+            <option value="">Select Branch</option>
+            <option value="CSE">CSE</option>
+            <option value="AI&DS">AI&DS</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <option value="CE">CE</option>
+        </select>
+
+        <label>Interest</label>
+        <select id="sRegInterest">
+            <option value="">Select Interest</option>
+            <option value="Web Development">Web Development</option>
+            <option value="AI/ML">AI/ML</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <option value="Data Science">Data Science</option>
+        </select>
+
+        <input type="text" id="sRegSkills" placeholder="Skills (comma separated)">
+        <input type="text" id="sRegCV" placeholder="CV Link">
+
+        <button onclick="studentRegister()">Register</button>
+    </div>
+
+    <div class="card">
+        <h3>Login</h3>
+        <input type="email" id="sLoginEmail" placeholder="Email">
+        <input type="password" id="sLoginPass" placeholder="Password">
+        <button onclick="studentLogin()">Login</button>
+    </div>
+
+
+	<!-- DASHBOARD SECTION (Hidden by default) -->
+  	  <section id="dashboard" style="display:none;">
+
+    	    <h1>Welcome Student</h1>
+
+        	<!-- Roadmap Section goes here -->
+        	<section id="roadmap-section">
+         	   <!-- roadmap HTML here -->
+       		 </section>
+
+    	</section>
+
+    	<div id="studentDashboard"></div>
+	</section>
+
+<!-- COLLEGE -->
+<section id="college" class="section">
+    <h2>College Portal</h2>
+
+    <div class="card">
+        <h3>Register</h3>
+        <input type="text" id="colRegName" placeholder="College Name">
+        <input type="email" id="colRegEmail" placeholder="Email">
+        <input type="password" id="colRegPass" placeholder="Password">
+        <button onclick="collegeRegister()">Register</button>
+    </div>
+
+    <div class="card">
+        <h3>Login</h3>
+        <input type="email" id="colLoginEmail" placeholder="Email">
+        <input type="password" id="colLoginPass" placeholder="Password">
+        <button onclick="collegeLogin()">Login</button>
+    </div>
+
+    <div class="card">
+        <h3>Filter Students by Branch</h3>
+        <select id="filterBranch">
+            <option value="">Select Branch</option>
+            <option value="CSE">CSE</option>
+            <option value="AI&DS">AI&DS</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <option value="CE">CE</option>
+        </select>
+        <button onclick="filterStudents()">View Students</button>
+    </div>
+
+    <div id="collegeDashboard"></div>
+</section>
+
+<!-- COMPANY -->
+<section id="company" class="section">
+    <h2>Company Portal</h2>
+
+    <div class="card">
+        <h3>Register</h3>
+        <input type="text" id="cRegName" placeholder="Company Name">
+        <input type="email" id="cRegEmail" placeholder="Email">
+        <input type="password" id="cRegPass" placeholder="Password">
+        <textarea id="cRegAbout" placeholder="About Company"></textarea>
+        <button onclick="companyRegister()">Register</button>
+    </div>
+
+    <div class="card">
+        <h3>Login</h3>
+        <input type="email" id="cLoginEmail" placeholder="Email">
+        <input type="password" id="cLoginPass" placeholder="Password">
+        <button onclick="companyLogin()">Login</button>
+    </div>
+
+    <div class="card">
+        <h3>Match Students by Skills</h3>
+        <input type="text" id="cRequiredSkills" placeholder="Required Skills (comma separated)">
+        <button onclick="matchStudents()">Match</button>
+    </div>
+
+    <div id="companyDashboard"></div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
