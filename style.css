@@ -20,7 +20,16 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
+/* SPLINE BOX */
+.spline {
+    display: float;
+    position: absolute;
+    width: 150%;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+    left: -375px;
+}
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -204,5 +213,6 @@ ul li {
     margin-bottom: 8px;
     color: #f3e8ff;
 }
+
 
 
